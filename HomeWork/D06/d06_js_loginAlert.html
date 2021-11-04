@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login-JS</title>
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/form.css">
+
+</head>
+<body>
+    <h2>Javascript Alert() Demo</h2>
+    <hr>
+    <form action="../d05/d05_table_travel.html" id="form-login">
+        <fieldset>
+            <legend style="font-weight: bold;">Login</legend>
+            <div>
+                <label for="">Username</label>
+                <input type="text" name="user" id="user" required>
+            </div>
+            <div>
+                <label for="">Password</label>
+                <input type="password" name="pass" id="pass" required>
+            </div>            
+        </fieldset>
+        <div>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </div>        
+    </form>
+</body>
+<script>
+//lập trình cho sự kiện bấm nút submit của form có id="form-login"
+document.getElementById("form-login").onsubmit=function(){
+    //lấy giá trị của ô nhập username có id="user"
+    var user = document.getElementById("user").value;
+    //lấy giá trị của ô nhập password có id="pass"
+    var pass = document.getElementById("pass").value;
+
+    //kiểm tra username
+    if(user!="aptech"){
+        alert("Tên đăng nhập không đúng, vui lòng nhập lại!!!");
+        document.getElementById("user").focus(); //nháy cursor về ô nhập user
+        return false; //ko chuyển trang action
+    }
+
+    //kiểm tra password
+    if(pass!="123"){
+        alert("Mật khẩu không đúng, vui lòng nhập lại!!!");
+        document.getElementById("pass").focus(); //nháy cursor về ô nhập password
+        return false; //ko chuyển trang action
+    }
+}
+</script>
+</html>
